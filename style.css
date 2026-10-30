@@ -1,4 +1,4 @@
-/* 에어워트 — 깔끔하고 믿음이 가는 업체 사이트
+/* (주)수 Water — 깔끔하고 믿음이 가는 업체 사이트
    색: 바다 남색 · 바다 파랑 · 산소 하늘색 · 거품 흰색 · 강철 회색 · 부표 주황(견적 문의 버튼에만) */
 :root {
   --navy: #0A2A43;
@@ -251,3 +251,34 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   color: var(--steel); font-size: 15px; border: 1px solid var(--line);
 }
 @media (max-width: 860px) { .product .wrap { grid-template-columns: 1fr; gap: 28px; } }
+
+/* 사진 */
+.shot { margin: 0; background: #E6EDF3; overflow: hidden; }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.use .shot { aspect-ratio: 4 / 3; }
+.wide-shot { margin-top: 24px; border: 1px solid var(--line); border-radius: var(--radius-m); background: var(--white); }
+.wide-shot img { aspect-ratio: 16 / 7; }
+.wide-shot figcaption, .model figcaption, .patent figcaption { padding: 12px 16px; font-size: 15px; color: var(--steel); }
+@media (max-width: 760px) { .wide-shot img { aspect-ratio: 4 / 3; } }
+
+/* 대표모델 · 가격 · 사양 · 특허 */
+.models { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.model { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-m); overflow: hidden; }
+.model .shot { aspect-ratio: 1 / 1; background: #fff; }
+.model .shot img { object-fit: contain; padding: 16px; }
+.model figcaption strong { display: block; font-size: 20px; font-weight: 800; color: var(--navy); }
+.facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; padding: 0; list-style: none; }
+.facts li { background: #E8F2FB; color: var(--navy); font-weight: 700; border-radius: 999px; padding: 8px 16px; font-size: 16px; }
+.tables { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; align-items: start; }
+.tables h3 { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+.compare.spec-table { min-width: 0; }
+.compare.spec-table th { width: 38%; }
+.price { font-size: 20px; font-weight: 800; color: var(--navy); }
+.patent { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start; margin-top: 32px; }
+.patent figure { margin: 0; border: 1px solid var(--line); border-radius: var(--radius-m); overflow: hidden; background: #fff; }
+.patent img { display: block; width: 100%; height: auto; }
+@media (max-width: 860px) {
+  .models, .tables { grid-template-columns: 1fr; }
+  .patent { grid-template-columns: 1fr; }
+  .patent figure { max-width: 340px; }
+}
